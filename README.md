@@ -2,7 +2,7 @@
 Testing del ejercicio 3
 
 El ejercicio 1  ha sido realizado por Guillermo Cubero y Yolanda Galvan Redondo 
-Se puede encontrar el codigo +  capturas de excel con el calculo de parametros 
+Se puede encontrar el codigo + documento de testing del ejercicio1+ capturas de excel del ejercicio 3 con el calculo de parametros 
 
 ## Pseudocodigo Año bisiesto
 
