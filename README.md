@@ -1,7 +1,7 @@
 # ISO_B01_Problema1
-Testing del ejercicio 1
+Testing del ejercicio 3
 
-Este ejercico ha sido realizado por Guillermo Cubero y Yolanda Galvan Redondo 
+El ejercicio 1 y el testing del ejercicio 3  ha sido realizado por Guillermo Cubero y Yolanda Galvan Redondo 
 Se puede encontrar el codigo +  capturas de excel con el calculo de parametros 
 
 ## Pseudocodigo Cuenta Bancaria
