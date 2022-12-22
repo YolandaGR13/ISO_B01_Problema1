@@ -1,74 +1,67 @@
 # ISO_B01_Problema1
 Testing del ejercicio 3
 
-El ejercicio 1 y el testing del ejercicio 3  ha sido realizado por Guillermo Cubero y Yolanda Galvan Redondo 
+El ejercicio 1 y ha sido realizado por Guillermo Cubero y Yolanda Galvan Redondo 
 Se puede encontrar el codigo +  capturas de excel con el calculo de parametros 
 
-## Pseudocodigo Cuenta Bancaria
+## Pseudocodigo Año bisiesto
 
+Inicio
 
-Si el cliente es menor de edad y estudia y no está independizado
+Variables: 
 
-	Ofrece la Cuenta Confort
-  
-Si el cliente es menor de 25 y estudia y es independiente
+	día
+	mes
+	año
+	bisiesto = true
+	
+Si día ← carácter o número negativo Entonces
 
-	Ofrece la Cuenta Vamos que tú puedes
-  
-Si el cliente es mayor de edad y trabaja y no está independizado
+	Lanzar Excepción
+EsBisiesto () ← fecha (día, mes, año)
 
-	Ofrece la Cuenta Ahorra ahora que puedes
-  
-Si el cliente es mayor de edad y trabaja y no está independizado
+Si año%4 ==0 AND (año%100==0 OR año%400==0)
 
-	Ofrece la Cuenta Saltando del nido
-  
-Si el cliente es mayor de 25 y trabaja y no está independizado
+	Bisiesto ← true
+	return bisiesto
+Sino
 
-	Ofrece la Cuenta Independízate que va siendo hora
-  
-Si el cliente es mayor de 25 y trabaja y está independizado
-
-	Ofrece la Cuenta Bienvenido a la vida adulta
-
-Si ninguno de estas condiciones se cumple
-
-	No es posible asignar una cuenta
+	Bisiesto ← false
+	return bisiesto
+	
+Fin
   
 ## Variables a tomar en cuenta
-Las variables que hay que considerar son aquellas que toman valores de entrada, por ello vamos a manejar tres variables: la Edad, si estudia y si está independizado.
-
-![image](https://user-images.githubusercontent.com/91546381/209224066-db84e6f6-066e-49e2-9e53-c3761f4c1bd7.png)
+Pese a que solamente haga falta el año para determinar si es bisiesto o no, hemos considerado como variables de entrada el día, mes y año. El método recibe un objeto fecha como parámetro de entrada, siendo necesario que estén las tres variables introducidas correctamente.
 
 ## Valores de prueba
-![image](https://user-images.githubusercontent.com/91546381/209223792-82b97a8f-7bf1-489b-9597-64437400e427.png)
+
+![image](https://user-images.githubusercontent.com/91546381/209236311-dff78b4b-02c1-46f9-bab4-76b36ceb9281.png)
 
 ## Número máximo de posibles casos de prueba:
-![image](https://user-images.githubusercontent.com/91546381/209223971-573a4969-99b6-4ba1-909a-5d2f14411b73.png)					
-![image](https://user-images.githubusercontent.com/91546381/209224109-066ad016-daa4-4b6c-b622-94f67a5c1c74.png)
-![image](https://user-images.githubusercontent.com/91546381/209224133-e662e2fd-3ef4-4504-aac7-8d2ecfc04f1e.png)
+Each use: 8. Pues es el mayor número de valores que puede adoptar una de nuestras variables (dos en nuestro caso, día y mes).
+Pair-Wise: 8x8 = 64. Son las dos variables que más parámetros reciben.	
+N-Wise: 6x6x4 = 144
 
 ## Conjunto de casos de pruebas para cumplir con each use
-![image](https://user-images.githubusercontent.com/91546381/209224190-e6d33924-2083-426a-b570-1053becad2f7.png)
+Test suite = {(-17, -5, -10), (17, 5, 2022), (71, 25, 0), (1, 1, -10), (31, 12, 2022), (-5000, 15000, -10000)}
 
 ## Conjunto de casos de pruebas para cumplir con pairwise
-El número de casos de prueba es 24, ya que es el número mayor de valores de todos los parámetros multiplicados al segundo mayor.
+Los parámetros que más valores adquieren son dando día como mes con 6, por lo que el conjunto de casos de prueba de PairWise será de 6x6 = 36
 
-Los seleccionados en amarillo serán los casos a de prueba para la cobertura modificada. 
+![image](https://user-images.githubusercontent.com/91546381/209236946-b5ae4763-b816-447f-85be-fb39f1007ecb.png)
 
-![image](https://user-images.githubusercontent.com/91546381/209224528-bd0dbbac-8365-423d-9276-713dd4c9b78d.png)
 
-![image](https://user-images.githubusercontent.com/91546381/209224743-4731a9b1-4b13-400b-870c-5553b0589d10.png)
+## Casos de prueba para alcanzar cobertura de decisiones
+1º decisión: Que sea divisible entre 4 (A), entre 100 (B) y entre 400 (C).
 
-![image](https://user-images.githubusercontent.com/91546381/209224774-ec7e0cca-c7eb-4c90-8357-1d1a152e1b8f.png)
+![image](https://user-images.githubusercontent.com/91546381/209237062-e2c2ee10-a454-4b92-a8ac-342ba5ab3f6a.png)
 
-![image](https://user-images.githubusercontent.com/91546381/209224794-30177d1e-1650-4ae4-af6b-1bebf57f0a21.png)
+## Cobertura Modificada
 
-![image](https://user-images.githubusercontent.com/91546381/209224813-32e5f1ee-57f8-4007-9fdf-7fef7bd62917.png)
+![image](https://user-images.githubusercontent.com/91546381/209237133-4805cf6f-11f8-4c88-bce6-8fdd99f453a2.png)
 
-![image](https://user-images.githubusercontent.com/91546381/209224825-ae23df4d-3fd6-4fe0-8648-312a128a474d.png)
+![image](https://user-images.githubusercontent.com/91546381/209237147-c04a7189-c173-4d6d-91e6-19a17e3260cd.png)
 
-## Cobertura modificada del problema 3
-Muestra los valores de las variables que será usados como casos de prueba en el proyecto de Maven empleado para ejecutar el testing del problema.
+Para calcular si un año es bisiesto hay que tener en cuenta que el año sea divisible entre 4 y, además, divisible entre 100 pero no 400. Luego nos quedarían 3 decisiones: divisible entre 4 && (Divisible entre 100 || Divisible entre 400)
 
-![image](https://user-images.githubusercontent.com/91546381/209224950-20f1cfa5-6e93-4ba5-9b79-34ea8d4b7f3d.png)
