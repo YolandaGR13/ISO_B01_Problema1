@@ -1,7 +1,7 @@
 # ISO_B01_Problema1
 Testing del ejercicio 3
 
-El ejercicio 1 y ha sido realizado por Guillermo Cubero y Yolanda Galvan Redondo 
+El ejercicio 1  ha sido realizado por Guillermo Cubero y Yolanda Galvan Redondo 
 Se puede encontrar el codigo +  capturas de excel con el calculo de parametros 
 
 ## Pseudocodigo Año bisiesto
